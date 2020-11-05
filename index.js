@@ -1,10 +1,10 @@
 const {app, Menu, Tray } = require('electron')
-const starfishd = require('starfishd')
+const starfish = require('starfish-server')
 const open = require('open')
 let tray = null
 const init = () => {
   const homedir = require('os').homedir();
-  starfishd({ db: homedir + "/.starfish" })
+  starfish({ db: homedir + "/.starfish" })
   createTray()
   open("http://localhost:21000")
 }
